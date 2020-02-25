@@ -7,10 +7,10 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-public class ProviderServiceApplication {
+public class Ch64ProviderServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ProviderServiceApplication.class, args);
+        SpringApplication.run(Ch64ProviderServiceApplication.class, args);
     }
     
 }
