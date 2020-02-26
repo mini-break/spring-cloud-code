@@ -2,20 +2,15 @@ package cn.springcloud.book;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.netflix.hystrix.EnableHystrix;
+import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
-/**
- * @author www.springcloud.cn
- *
- */
 @SpringBootApplication
-@EnableHystrix
 @EnableDiscoveryClient
-public class ClientApplication {
-	
+@EnableZuulProxy
+public class Ch32ZuulGatewayApplication {
+
     public static void main(String[] args) {
-        SpringApplication.run(ClientApplication.class, args);
+        SpringApplication.run(Ch32ZuulGatewayApplication.class, args);
     }
 }

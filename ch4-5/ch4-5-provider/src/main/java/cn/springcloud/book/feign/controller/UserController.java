@@ -15,6 +15,7 @@ public class UserController {
 
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
 	public String addUser(User user , HttpServletRequest request){
+		// 获取请求头里的token
 		String token=request.getHeader("oauthToken");
 		return "hello,"+user.getName();
 	}

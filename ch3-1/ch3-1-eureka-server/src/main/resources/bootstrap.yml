@@ -4,6 +4,7 @@ spring:
   cloud:
     config:
       uri: http://localhost:8888
+# 启用监控 开放所有端点health，info，metrics，通过actuator/+端点名就可以获取相应的信息。默认打开health和info
 management:
   endpoints:
     web:

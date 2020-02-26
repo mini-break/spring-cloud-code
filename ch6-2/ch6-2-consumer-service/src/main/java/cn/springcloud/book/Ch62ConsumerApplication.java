@@ -1,4 +1,4 @@
-package cn.springcloud.book.ex;
+package cn.springcloud.book;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,16 +7,16 @@ import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
+ * @author www.springcloud.cn
  */
 @SpringBootApplication
-@EnableDiscoveryClient
 @EnableHystrix
+@EnableDiscoveryClient
 @EnableFeignClients
-public class HystrixExceptionApplication{
-
+public class Ch62ConsumerApplication {
+	
     public static void main(String[] args) {
-        SpringApplication.run(HystrixExceptionApplication.class, args);
+        SpringApplication.run(Ch62ConsumerApplication.class, args);
     }
-
     
 }

@@ -40,7 +40,7 @@
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
 
-
+        <!-- 使用okhttp替换Feign原生httpclient -->
         <dependency>
             <groupId>io.github.openfeign</groupId>
             <artifactId>feign-okhttp</artifactId>

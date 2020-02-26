@@ -1,3 +1,4 @@
 eureka:
   client:
+    # 客户端从Eureka Server集群里更新Eureka Server信息的频率
     eureka-service-url-poll-interval-seconds: 10 #默认为300秒，这里为了验证改为10秒

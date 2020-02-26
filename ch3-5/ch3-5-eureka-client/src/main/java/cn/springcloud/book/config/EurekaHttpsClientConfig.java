@@ -17,6 +17,9 @@ import java.security.cert.CertificateException;
 
 /**
  * Created by caibosi on 2018-06-26.
+ * 我们这里没有指定整个应用实例启用HTTPS，仅仅是开启访问eureka-server的HTTPS配置。
+ * 通过自定义配置eureka.client.ssl.key-store和eureka.client.ssl.key-store-password两个属性，
+ * 指定eureka-client访问eureka-server的sslContext配置。这里需要在代码里指定DiscoveryClient.DiscoveryClientOptionalArgs
  */
 @Profile({"https"})
 @Configuration
@@ -31,7 +34,7 @@ public class EurekaHttpsClientConfig {
     @Bean
     public DiscoveryClient.DiscoveryClientOptionalArgs discoveryClientOptionalArgs() throws CertificateException, NoSuchAlgorithmException, KeyStoreException, IOException, KeyManagementException {
         EurekaJerseyClientImpl.EurekaJerseyClientBuilder builder = new EurekaJerseyClientImpl.EurekaJerseyClientBuilder();
-        builder.withClientName("eureka-https-client");
+        builder.withClientName("eureka-https-client1234");
         SSLContext sslContext = new SSLContextBuilder()
                 .loadTrustMaterial(
                         this.getClass().getClassLoader().getResource(keyStoreFileName),keyStorePassword.toCharArray()

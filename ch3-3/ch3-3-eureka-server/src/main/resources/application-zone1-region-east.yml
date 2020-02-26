@@ -7,6 +7,7 @@ eureka:
   server:
     waitTimeInMsWhenSyncEmpty: 0
     enableSelfPreservation: false
+    # 针对远程地区发现的网址域名,多个逗号隔开
     remoteRegionUrlsWithName:
       region-west: http://localhost:8763/eureka/
   client:

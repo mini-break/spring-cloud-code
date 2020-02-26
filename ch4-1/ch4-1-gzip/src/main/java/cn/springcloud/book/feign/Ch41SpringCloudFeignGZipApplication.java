@@ -7,9 +7,9 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
 @EnableFeignClients
-public class SpringCloudFeignApplication {
+public class Ch41SpringCloudFeignGZipApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringCloudFeignApplication.class, args);
+		SpringApplication.run(Ch41SpringCloudFeignGZipApplication.class, args);
 	}
 }

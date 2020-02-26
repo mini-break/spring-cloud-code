@@ -4,12 +4,14 @@ package cn.springcloud.book.feign;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-public class SCFeignFileServerApplication {
+@EnableFeignClients
+public class Ch44SCFeignFileUploadApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(SCFeignFileServerApplication.class, args);
-    }
+	public static void main(String[] args) {
+		SpringApplication.run(Ch44SCFeignFileUploadApplication.class, args);
+	}
 }

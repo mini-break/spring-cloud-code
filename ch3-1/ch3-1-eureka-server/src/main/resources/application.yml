@@ -1,3 +1,4 @@
 eureka:
   server:
+    # 集群之间相互更新节点信息的时间频率,默认是10分钟
     peer-eureka-nodes-update-interval-ms: 10000 #默认是10分钟即600000，这里为了验证改为10秒

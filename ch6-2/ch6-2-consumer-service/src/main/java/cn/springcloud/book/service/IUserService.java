@@ -11,6 +11,6 @@ import cn.springcloud.book.service.impl.UserServiceFallback;
 public interface IUserService {
 	
 	@RequestMapping(value = "/getUser",method = RequestMethod.GET)
-    public String getUser(@RequestParam("username") String username);
+     String getUser(@RequestParam("username") String username);
     
 }

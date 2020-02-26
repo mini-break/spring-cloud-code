@@ -2,20 +2,17 @@ package cn.springcloud.book;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
 
 /**
- * @author zhudeming
+ * @author www.springcloud.cn
+ *
  */
 @SpringBootApplication
 @EnableDiscoveryClient
-@EnableHystrixDashboard
-public class HystrixDashboardApplication {
-
+public class Ch62ProviderApplication {
+	
     public static void main(String[] args) {
-        SpringApplication.run(HystrixDashboardApplication.class, args);
+        SpringApplication.run(Ch62ProviderApplication.class, args);
     }
-   
 }

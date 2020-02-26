@@ -1,3 +1,4 @@
+# feign中，默认是自带Hystrix的功能的，默认是关闭的，需要打开
 feign:
   hystrix:
     enabled: true

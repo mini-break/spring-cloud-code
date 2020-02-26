@@ -2,6 +2,8 @@ spring:
   application:
     name: config-server
   profiles:
+    # profile为native，说明为本地配置中心，默认配置文件放在resources/config目录下
+    # 也可以放到指定目录下如：spring.cloud.config.server.native.searchLocations=file:D:\\etc\\native 或 spring.cloud.config.server.native.searchLocations=classpath:properties/,classpath:properties/provider-model/
     active: native
 server:
   port: 8888

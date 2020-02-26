@@ -25,6 +25,7 @@
     </properties>
 
     <dependencies>
+        <!--EurekaHttpsClientConfig.java需要依赖该jar-->
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
