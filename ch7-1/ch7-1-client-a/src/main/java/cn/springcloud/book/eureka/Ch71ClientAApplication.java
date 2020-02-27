@@ -2,18 +2,18 @@ package cn.springcloud.book.eureka;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
  * 
- * @author Lovnx
+ * @author www.springcloud.cn
  *
  */
 @SpringBootApplication
-@EnableEurekaServer
-public class EurekaServerApplication {
-
+@EnableDiscoveryClient
+public class Ch71ClientAApplication {
+	
     public static void main(String[] args) {
-        SpringApplication.run(EurekaServerApplication.class, args);
+        SpringApplication.run(Ch71ClientAApplication.class, args);
     }
 }

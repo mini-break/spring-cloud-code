@@ -15,10 +15,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableSwagger2
-public class ClientAApplication {
+public class Ch87ClientAApplication {
 	
     public static void main(String[] args) {
-        SpringApplication.run(ClientAApplication.class, args);
+        SpringApplication.run(Ch87ClientAApplication.class, args);
     }
     
     @Bean

@@ -13,6 +13,9 @@ import springfox.documentation.swagger.web.SwaggerResource;
 import springfox.documentation.swagger.web.SwaggerResourcesProvider;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+/**
+ * 整合Swagger2调试源服务
+ */
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {

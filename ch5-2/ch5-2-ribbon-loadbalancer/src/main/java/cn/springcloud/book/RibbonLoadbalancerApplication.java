@@ -16,11 +16,14 @@ import cn.springcloud.book.config.TestConfiguration;
 
 @SpringBootApplication
 @EnableDiscoveryClient
+// 对client-a服务使用策略是经过TestConfiguration所配置的
 @RibbonClient(name = "client-a", configuration = TestConfiguration.class)
 //@RibbonClients(value = {
 //		@RibbonClient(name = "client-a", configuration = TestConfiguration.class),
 //		@RibbonClient(name = "client-b", configuration = TestConfiguration.class)
 //})
+
+// 让Spring不去扫描被@AvoidScan注解标记的配置类,因为我们配置的是对单个源服务生效的，所以不能应用于全局，如果不排除，启动会报错。
 @ComponentScan(excludeFilters = {@ComponentScan.Filter(type = FilterType.ANNOTATION, value = {AvoidScan.class})})
 public class RibbonLoadbalancerApplication {
 

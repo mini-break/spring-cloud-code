@@ -12,10 +12,10 @@ import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-public class AuthServerApplication extends WebSecurityConfigurerAdapter {
+public class Ch82AuthServerApplication extends WebSecurityConfigurerAdapter {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AuthServerApplication.class, args);
+		SpringApplication.run(Ch82AuthServerApplication.class, args);
 	}
 	
     @Bean(name = BeanIds.AUTHENTICATION_MANAGER)

@@ -11,10 +11,10 @@ import cn.springcloud.book.filter.GrayFilter;
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableZuulProxy
-public class ZuulServerApplication {
+public class Ch85ZuulServerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ZuulServerApplication.class, args);
+        SpringApplication.run(Ch85ZuulServerApplication.class, args);
     }
     
     @Bean

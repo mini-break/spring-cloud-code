@@ -8,6 +8,9 @@ import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
 
+/**
+ * header传递参数到下游服务
+ */
 @Configuration
 public class HeaderDeliverFilter extends ZuulFilter {
 

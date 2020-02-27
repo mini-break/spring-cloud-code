@@ -21,12 +21,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @EnableDiscoveryClient
+// @EnableResourceServer 注释意味着您的服务（就OAuth 2.0而言 - 资源服务器）需要访问令牌才能处理请求。在调用资源服务器之前，应通过OAuth 2.0客户端从授权服务器获取访问令牌
 @EnableResourceServer
 @RestController
-public class ClientAApplication extends ResourceServerConfigurerAdapter {
+public class Ch82ClientAApplication extends ResourceServerConfigurerAdapter {
 	
     public static void main(String[] args) {
-        SpringApplication.run(ClientAApplication.class, args);
+        SpringApplication.run(Ch82ClientAApplication.class, args);
     }
     
 	@RequestMapping("/test")
@@ -46,7 +47,7 @@ public class ClientAApplication extends ResourceServerConfigurerAdapter {
 		http
 		.csrf().disable()
 		.authorizeRequests()
-		.antMatchers("/**").authenticated()
+		.antMatchers("/**").authenticated() // 所有请求都需要认证
 		.antMatchers(HttpMethod.GET, "/test")
 		.hasAuthority("WRIGTH_READ");
 	}

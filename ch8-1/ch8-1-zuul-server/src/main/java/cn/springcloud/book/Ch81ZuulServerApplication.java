@@ -14,8 +14,6 @@ import com.netflix.zuul.groovy.GroovyCompiler;
 import com.netflix.zuul.groovy.GroovyFileFilter;
 import com.netflix.zuul.monitoring.MonitoringHelper;
 
-import cn.springcloud.book.filter.ErrorFilter;
-import cn.springcloud.book.filter.FirstPreFilter;
 import cn.springcloud.book.filter.PostFilter;
 import cn.springcloud.book.filter.SecondPreFilter;
 import cn.springcloud.book.filter.ThirdPreFilter;
@@ -23,10 +21,10 @@ import cn.springcloud.book.filter.ThirdPreFilter;
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableZuulProxy
-public class ZuulServerApplication {
+public class Ch81ZuulServerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ZuulServerApplication.class, args);
+        SpringApplication.run(Ch81ZuulServerApplication.class, args);
     }
     
     /**

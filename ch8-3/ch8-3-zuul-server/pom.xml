@@ -22,6 +22,7 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
+		<!--专门针对zuul编写的限流库-->
 		<dependency>
 			<groupId>com.marcosbarbero.cloud</groupId>
 			<artifactId>spring-cloud-zuul-ratelimit</artifactId>
