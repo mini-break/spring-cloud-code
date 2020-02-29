@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @time: 15:47
  * @description : do some thing
  */
-@RefreshScope
+@RefreshScope // 被该注解修饰的Bean都是延时加载的
 @RestController
 @RequestMapping("configConsumer")
 public class ConfigClientController {

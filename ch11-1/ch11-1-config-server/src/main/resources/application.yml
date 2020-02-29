@@ -3,9 +3,10 @@ spring:
     config:
       server:
         git:
-          uri: https://gitee.com/zhongzunfa/spring-cloud-config.git
-          #username:
-          #password:
+          uri: https://gitee.com/ohmygod0512/spring-cloud-config.git
+#          username:
+#          password:
+          # 搜索SC-BOOK-CONFIG目录下所有满足条件的配置文件
           search-paths: SC-BOOK-CONFIG
   application:
     name: sc-config-git

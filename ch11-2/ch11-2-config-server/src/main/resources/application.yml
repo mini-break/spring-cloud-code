@@ -3,7 +3,7 @@ spring:
     config:
       server:
         git:
-          uri: https://gitee.com/zhongzunfa/spring-cloud-config.git
+          uri: https://gitee.com/ohmygod0512/spring-cloud-config.git
           #username:
           #password:
           search-paths: SC-BOOK-CONFIG

@@ -14,10 +14,10 @@ import org.springframework.cloud.config.server.EnableConfigServer;
  */
 @SpringBootApplication
 @EnableConfigServer
-public class ConfigGitApplication {
+public class Ch112ConfigGitApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ConfigGitApplication.class, args);
+        SpringApplication.run(Ch112ConfigGitApplication.class, args);
 
     }
 }

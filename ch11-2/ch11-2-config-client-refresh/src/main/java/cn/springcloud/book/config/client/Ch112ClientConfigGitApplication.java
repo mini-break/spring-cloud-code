@@ -10,9 +10,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @description :
  */
 @SpringBootApplication
-public class ClientConfigGitApplication {
+public class Ch112ClientConfigGitApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ClientConfigGitApplication.class, args);
+        SpringApplication.run(Ch112ClientConfigGitApplication.class, args);
     }
 }
