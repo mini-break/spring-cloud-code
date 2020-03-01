@@ -3,13 +3,13 @@ spring:
     config:
       server:
         git:
-          uri: https://gitee.com/zhongzunfa/spring-cloud-config
+          uri: https://gitee.com/ohmygod0512/spring-cloud-config # 默认仓库地址
           search-paths: SC-BOOK-CONFIG
           repos:
             simple: https://gitee.com/zhongzunfa/simple
             special:
                 pattern: special*/dev*,*special*/dev*
-                uri: https://gitee.com/zhongzunfa/spring-cloud-config-special
+                uri: https://gitee.com/ohmygod0512/spring-cloud-config-special
             local:
               pattern: local*
               uri: /Users/zhongzunfa/all_test/spring-cloud-config
