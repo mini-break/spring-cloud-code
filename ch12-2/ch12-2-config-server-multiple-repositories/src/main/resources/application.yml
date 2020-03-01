@@ -5,6 +5,7 @@ spring:
         git:
           uri: https://gitee.com/ohmygod0512/spring-cloud-config # 默认仓库地址
           search-paths: SC-BOOK-CONFIG
+          # 注意：配置多个仓库时，Config Server 在启动时会直接克隆第一个仓库的配置库，其他配置库只有请求时才会clone到本地
           repos:
             simple: https://gitee.com/zhongzunfa/simple
             special:
