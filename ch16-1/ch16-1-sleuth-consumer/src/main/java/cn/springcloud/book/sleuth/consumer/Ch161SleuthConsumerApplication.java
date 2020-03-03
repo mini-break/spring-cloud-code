@@ -6,8 +6,8 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
 @EnableFeignClients
-public class SleuthConsumerApplication {
+public class Ch161SleuthConsumerApplication {
     public static void main(String[] args) {
-        SpringApplication.run(SleuthConsumerApplication.class,args);
+        SpringApplication.run(Ch161SleuthConsumerApplication.class,args);
     }
 }
