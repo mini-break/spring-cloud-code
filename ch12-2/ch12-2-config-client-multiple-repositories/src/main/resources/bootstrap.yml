@@ -7,5 +7,8 @@ spring:
 #            name: spring-cloud-config
 #            profile: config-info
             # 读取https://gitee.com/ohmygod0512/spring-cloud-config/SC-BOOK-CONFIG/config-info-dev.yml
-            name: config-info
-            profile: dev
+#            name: config-info
+#            profile: dev
+            # 读取https://gitee.com/ohmygod0512/spring-cloud-config-special/SC-BOOK-CONFIG/special-test-dev-test.yaml
+            name: special-test
+            profile: dev-test

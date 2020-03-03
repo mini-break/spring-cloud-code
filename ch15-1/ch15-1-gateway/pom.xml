@@ -38,6 +38,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webflux</artifactId>
         </dependency>
+		<!--jwt相关类-->
         <dependency>
 		   <groupId>io.jsonwebtoken</groupId>
 		   <artifactId>jjwt</artifactId>

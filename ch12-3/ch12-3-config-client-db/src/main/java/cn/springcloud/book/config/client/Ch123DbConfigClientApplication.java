@@ -11,9 +11,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @description :
  */
 @SpringBootApplication
-public class DbConfigClientApplication {
+public class Ch123DbConfigClientApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DbConfigClientApplication.class, args);
+        SpringApplication.run(Ch123DbConfigClientApplication.class, args);
     }
 }

@@ -14,10 +14,10 @@ import org.springframework.cloud.config.server.EnableConfigServer;
  */
 @SpringBootApplication
 @EnableConfigServer
-public class DbConfigServerApplication {
+public class Ch123DbConfigServerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DbConfigServerApplication.class, args);
+        SpringApplication.run(Ch123DbConfigServerApplication.class, args);
 
     }
 }

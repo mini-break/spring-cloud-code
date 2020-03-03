@@ -3,17 +3,22 @@ spring:
     config:
       server:
         git:
+          # 注意：配置多个仓库时，Config Server 在启动时会直接克隆第一个仓库的配置库，其他配置库只有请求时才会clone到本地
           uri: https://gitee.com/ohmygod0512/spring-cloud-config # 默认仓库地址
           search-paths: SC-BOOK-CONFIG
-          # 注意：配置多个仓库时，Config Server 在启动时会直接克隆第一个仓库的配置库，其他配置库只有请求时才会clone到本地
+          # 配置了三个仓库 simple,special,local
           repos:
-            simple: https://gitee.com/zhongzunfa/simple
+            # simple仓库匹配application为simple,profile为任意值
+            simple: https://gitee.com/ohmygod0512/simple
+            # special仓库匹配application为special开头,profile为dev开头.或者application中包含special,profile为dev开头
+            # 匹配到则从https://gitee.com/ohmygod0512/spring-cloud-config-special/SC-BOOK-CONFIG/{application}-{profile}.yaml读取数据
             special:
                 pattern: special*/dev*,*special*/dev*
                 uri: https://gitee.com/ohmygod0512/spring-cloud-config-special
+                search-paths: SC-BOOK-CONFIG
             local:
               pattern: local*
-              uri: /Users/zhongzunfa/all_test/spring-cloud-config
+              uri: /Users/ohmygod0512/all_test/spring-cloud-config
 
   application:
     name: ch12-2-config-server-multiple-repositories

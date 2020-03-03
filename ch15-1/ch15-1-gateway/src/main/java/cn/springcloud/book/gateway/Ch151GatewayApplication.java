@@ -8,10 +8,10 @@ import org.springframework.http.codec.ServerCodecConfigurer;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-public class GatewayApplication {
+public class Ch151GatewayApplication {
 
 	public static  void main(String[] args) {
-		SpringApplication.run(GatewayApplication.class, args);
+		SpringApplication.run(Ch151GatewayApplication.class, args);
 	}
 	
 	@Bean
