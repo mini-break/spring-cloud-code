@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Bean;
  * @author xujin
  */
 @SpringBootApplication
-public class GatewayServerApplication {
+public class Ch182GatewayServerApplication {
 
     @Bean
     public RouteLocator customerRouteLocator(RouteLocatorBuilder builder) {
@@ -25,7 +25,7 @@ public class GatewayServerApplication {
                 .build();
     }
     public static void main(String[] args) {
-        SpringApplication.run(GatewayServerApplication.class, args);
+        SpringApplication.run(Ch182GatewayServerApplication.class, args);
     }
 
 }

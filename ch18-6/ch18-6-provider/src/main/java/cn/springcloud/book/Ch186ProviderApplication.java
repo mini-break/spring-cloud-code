@@ -4,13 +4,13 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * @author xujin
+ * @author yibo
  */
 @SpringBootApplication
-public class HelloProviderApplication {
+public class Ch186ProviderApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(HelloProviderApplication.class, args);
+        SpringApplication.run(Ch186ProviderApplication.class, args);
     }
 
 }

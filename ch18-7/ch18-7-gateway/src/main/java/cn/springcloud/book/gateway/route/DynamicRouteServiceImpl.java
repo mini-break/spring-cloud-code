@@ -8,10 +8,8 @@ import org.springframework.cloud.gateway.event.RefreshRoutesEvent;
 import org.springframework.cloud.gateway.handler.predicate.PredicateDefinition;
 import org.springframework.cloud.gateway.route.RouteDefinition;
 import org.springframework.cloud.gateway.route.RouteDefinitionWriter;
-import org.springframework.cloud.gateway.support.NotFoundException;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.ApplicationEventPublisherAware;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.util.UriComponentsBuilder;
 import reactor.core.publisher.Mono;
@@ -32,6 +30,7 @@ public class DynamicRouteServiceImpl implements ApplicationEventPublisherAware {
 
     /**
      * 增加路由
+     *
      * @param definition
      * @return
      */
@@ -44,6 +43,7 @@ public class DynamicRouteServiceImpl implements ApplicationEventPublisherAware {
 
     /**
      * 更新路由
+     *
      * @param definition
      * @return
      */
@@ -51,7 +51,7 @@ public class DynamicRouteServiceImpl implements ApplicationEventPublisherAware {
         try {
             this.routeDefinitionWriter.delete(Mono.just(definition.getId()));
         } catch (Exception e) {
-            return "update fail,not find route  routeId: "+definition.getId();
+            return "update fail,not find route  routeId: " + definition.getId();
         }
         try {
             routeDefinitionWriter.save(Mono.just(definition)).subscribe();
@@ -63,8 +63,10 @@ public class DynamicRouteServiceImpl implements ApplicationEventPublisherAware {
 
 
     }
+
     /**
      * 删除路由
+     *
      * @param id
      * @return
      */
@@ -86,13 +88,14 @@ public class DynamicRouteServiceImpl implements ApplicationEventPublisherAware {
 
     /**
      * spring:
-     cloud:
-     gateway:
-     routes: #当访问http://localhost:8080/baidu,直接转发到https://www.baidu.com/
-     - id: baidu_route
-     uri: http://baidu.com:80/
-     predicates:
-     - Path=/baidu
+     * cloud:
+     * gateway:
+     * routes: #当访问http://localhost:8080/baidu,直接转发到https://www.baidu.com/
+     * - id: baidu_route
+     * uri: http://baidu.com:80/
+     * predicates:
+     * - Path=/baidu
+     *
      * @param args
      */
 
@@ -105,10 +108,10 @@ public class DynamicRouteServiceImpl implements ApplicationEventPublisherAware {
         predicateParams.put("pattern", "/jd");
         predicate.setArgs(predicateParams);
         definition.setPredicates(Arrays.asList(predicate));
-        String uri="http://www.jd.com";
+        String uri = "http://www.jd.com";
         //URI uri = UriComponentsBuilder.fromHttpUrl("http://www.baidu.com").build().toUri();
         definition.setUri(uri);
-        System.out.println("definition:"+JSON.toJSONString(definition));
+        System.out.println("definition:" + JSON.toJSONString(definition));
 
 
         RouteDefinition definition1 = new RouteDefinition();
@@ -121,7 +124,7 @@ public class DynamicRouteServiceImpl implements ApplicationEventPublisherAware {
         definition1.setPredicates(Arrays.asList(predicate1));
         URI uri1 = UriComponentsBuilder.fromHttpUrl("http://www.baidu.com").build().toUri();
         definition1.setUri(uri1);
-        System.out.println("definition1："+JSON.toJSONString(definition1));
+        System.out.println("definition1：" + JSON.toJSONString(definition1));
 
     }
 

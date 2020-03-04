@@ -16,6 +16,7 @@ import java.util.Objects;
 
 /**
  * 根据CPU的使用情况限流
+ *
  * @author: xujin
  **/
 @Component
@@ -28,7 +29,7 @@ public class GatewayRateLimitFilterByCpu implements GatewayFilter, Ordered {
 
     private static final String METRIC_NAME = "system.cpu.usage";
 
-    private static final double MAX_USAGE = 0.50D;
+    private static final double MAX_USAGE = 0.20D;
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
@@ -42,8 +43,8 @@ public class GatewayRateLimitFilterByCpu implements GatewayFilter, Ordered {
                 .filter(Double::isFinite)
                 .orElse(0.0D);
 
-        boolean isOpenRateLimit = systemCpuUsage >MAX_USAGE;
-        log.debug("system.cpu.usage: {}, isOpenRateLimit:{} ",systemCpuUsage , isOpenRateLimit);
+        boolean isOpenRateLimit = systemCpuUsage > MAX_USAGE;
+        log.debug("system.cpu.usage: {}, isOpenRateLimit:{} ", systemCpuUsage, isOpenRateLimit);
         if (isOpenRateLimit) {
             //当CPU的使用超过设置的最大阀值开启限流
             exchange.getResponse().setStatusCode(HttpStatus.TOO_MANY_REQUESTS);

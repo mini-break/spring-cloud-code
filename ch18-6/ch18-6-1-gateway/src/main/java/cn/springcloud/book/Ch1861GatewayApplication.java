@@ -11,21 +11,21 @@ import java.time.Duration;
 
 
 @SpringBootApplication
-public class GatewayApplication {
+public class Ch1861GatewayApplication {
 
     @Bean
     public RouteLocator customerRouteLocator(RouteLocatorBuilder builder) {
         return builder.routes()
                 .route(r -> r.path("/test/rateLimit")
-                        .filters(f -> f.filter(new GatewayRateLimitFilterByIp(10,1,Duration.ofSeconds(1))))
+                        .filters(f -> f.filter(new GatewayRateLimitFilterByIp(10, 1, Duration.ofSeconds(1))))
                         .uri("http://localhost:8000/hello/rateLimit")
                         .id("rateLimit_route")
                 ).build();
     }
-    public static void main(String[] args) {
-        SpringApplication.run(GatewayApplication.class, args);
-    }
 
+    public static void main(String[] args) {
+        SpringApplication.run(Ch1861GatewayApplication.class, args);
+    }
 
 
 }

@@ -1,15 +1,15 @@
 package cn.springcloud.book.gateway.controller;
 
+import cn.springcloud.book.gateway.model.GatewayFilterDefinition;
 import cn.springcloud.book.gateway.model.GatewayPredicateDefinition;
 import cn.springcloud.book.gateway.model.GatewayRouteDefinition;
 import cn.springcloud.book.gateway.route.DynamicRouteServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.gateway.filter.FilterDefinition;
 import org.springframework.cloud.gateway.handler.predicate.PredicateDefinition;
 import org.springframework.cloud.gateway.route.RouteDefinition;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
-import reactor.core.publisher.Mono;
 
 import java.net.URI;
 import java.util.ArrayList;
@@ -24,6 +24,7 @@ public class RouteController {
 
     /**
      * 增加路由
+     *
      * @param gwdefinition
      * @return
      */
@@ -49,6 +50,12 @@ public class RouteController {
         return this.dynamicRouteService.update(definition);
     }
 
+    /**
+     * GatewayRouteDefinition转RouteDefinition
+     *
+     * @param gwdefinition
+     * @return
+     */
     private RouteDefinition assembleRouteDefinition(GatewayRouteDefinition gwdefinition) {
 
         RouteDefinition definition = new RouteDefinition();
@@ -58,7 +65,7 @@ public class RouteController {
 
         // Predicates
         List<PredicateDefinition> pdList = new ArrayList<>();
-        for (GatewayPredicateDefinition gpDefinition: gwdefinition.getPredicates()) {
+        for (GatewayPredicateDefinition gpDefinition : gwdefinition.getPredicates()) {
             PredicateDefinition predicate = new PredicateDefinition();
             predicate.setArgs(gpDefinition.getArgs());
             predicate.setName(gpDefinition.getName());
@@ -68,7 +75,7 @@ public class RouteController {
 
         // Filters
         List<FilterDefinition> fdList = new ArrayList<>();
-        for (GatewayFilterDefinition gfDefinition: gwdefinition.getFilters()) {
+        for (GatewayFilterDefinition gfDefinition : gwdefinition.getFilters()) {
             FilterDefinition filter = new FilterDefinition();
             filter.setArgs(gfDefinition.getArgs());
             filter.setName(gfDefinition.getName());

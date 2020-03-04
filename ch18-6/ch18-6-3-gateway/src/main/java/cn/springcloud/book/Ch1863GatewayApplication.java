@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Bean;
 
 
 @SpringBootApplication
-public class GatewayApplication {
+public class Ch1863GatewayApplication {
 
     @Autowired
     private GatewayRateLimitFilterByCpu gatewayRateLimitFilterByCpu;
@@ -24,7 +24,8 @@ public class GatewayApplication {
                         .id("rateLimit_route")
                 ).build();
     }
+
     public static void main(String[] args) {
-        SpringApplication.run(GatewayApplication.class, args);
+        SpringApplication.run(Ch1863GatewayApplication.class, args);
     }
 }
