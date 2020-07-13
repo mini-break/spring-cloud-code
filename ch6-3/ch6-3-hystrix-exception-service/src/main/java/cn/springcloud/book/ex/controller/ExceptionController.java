@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
-import cn.springcloud.book.ex.service.dataservice.PSFallbackBadRequestExpcetion;
+import cn.springcloud.book.ex.service.dataservice.PSFallbackBadRequestException;
 import cn.springcloud.book.ex.service.dataservice.PSFallbackOtherExpcetion;
 import cn.springcloud.book.ex.service.dataservice.ProviderServiceCommand;
 
@@ -28,7 +28,7 @@ public class ExceptionController {
 
     @GetMapping("/getPSFallbackBadRequestExpcetion")
     public String providerServiceFallback(){
-    	String result = new PSFallbackBadRequestExpcetion().execute();
+    	String result = new PSFallbackBadRequestException().execute();
     	return result;
     }
     
@@ -40,7 +40,7 @@ public class ExceptionController {
     }
     
     @GetMapping("/getFallbackMethodTest")
-    @HystrixCommand
+    @HystrixCommand(fallbackMethod = "fallback")
     public String getFallbackMethodTest(String id){
     	throw new RuntimeException("getFallbackMethodTest failed");
     }

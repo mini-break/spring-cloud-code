@@ -7,10 +7,10 @@ import com.netflix.hystrix.HystrixCommand;
 import com.netflix.hystrix.HystrixCommandGroupKey;
 import com.netflix.hystrix.exception.HystrixBadRequestException;
 
-public class PSFallbackBadRequestExpcetion extends HystrixCommand<String>{
-	private static Logger log = LoggerFactory.getLogger(PSFallbackBadRequestExpcetion.class);
+public class PSFallbackBadRequestException extends HystrixCommand<String>{
+	private static Logger log = LoggerFactory.getLogger(PSFallbackBadRequestException.class);
 	
-    public PSFallbackBadRequestExpcetion() {
+    public PSFallbackBadRequestException() {
         super(HystrixCommandGroupKey.Factory.asKey("GroupBRE"));
     }
     
