@@ -9,8 +9,8 @@ import cn.springcloud.book.service.impl.UserServiceFallback;
 
 @FeignClient(name = "sc-provider-service", fallback = UserServiceFallback.class)
 public interface IUserService {
-	
-	@RequestMapping(value = "/getUser",method = RequestMethod.GET)
-     String getUser(@RequestParam("username") String username);
-    
+
+    @RequestMapping(value = "/getUser", method = RequestMethod.GET)
+    String getUser(@RequestParam("username") String username);
+
 }

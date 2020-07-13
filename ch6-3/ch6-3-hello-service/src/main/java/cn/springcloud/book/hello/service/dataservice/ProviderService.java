@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * feign调用数据服务
- * @author zhudeming
  *
+ * @author zhudeming
  */
 @FeignClient(name = "sc-provider-service")
 public interface ProviderService {
-	
-	@RequestMapping(value = "/getDashboard", method = RequestMethod.GET)
-    public List<String> getProviderData();
+
+    @RequestMapping(value = "/getDashboard", method = RequestMethod.GET)
+    List<String> getProviderData();
 
 }
