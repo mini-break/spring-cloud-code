@@ -8,11 +8,11 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @SpringBootApplication
 @EnableFeignClients
 @EnableDiscoveryClient
-public class AServiceApplication {
+public class Ch163AServiceApplication {
 
     public static void main(String[] args) {
 
-        SpringApplication.run(AServiceApplication.class, args);
+        SpringApplication.run(Ch163AServiceApplication.class, args);
     }
 
 }
