@@ -16,6 +16,7 @@ import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
  * 认证授权服务适配器
  */
 @Configuration
+// 告诉Spring激活authorization server
 @EnableAuthorizationServer
 public class OAuthConfiguration extends AuthorizationServerConfigurerAdapter {
 	

@@ -10,7 +10,9 @@ eureka:
   instance:
     hostname: localhost
     securePort: ${server.port}
+    # 启用安全端口
     securePortEnabled: true
+    # 禁用非安全端口
     nonSecurePortEnabled: false
     homePageUrl: https://${eureka.instance.hostname}:${server.port}/
     statusPageUrl: https://${eureka.instance.hostname}:${server.port}/

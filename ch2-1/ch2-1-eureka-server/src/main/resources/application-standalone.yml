@@ -5,10 +5,14 @@ eureka:
   instance:
     hostname: localhost
   client:
+    #指示此实例是否应将其信息注册到eureka服务器以供其他服务发现，默认为false
     registerWithEureka: false
+    #是否从Server获取注册信息
     fetchRegistry: false
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
   server:
+      #设置eureka server同步失败的等待时间，默认5分钟，在这期间它不向客户端提供服务注册信息
       waitTimeInMsWhenSyncEmpty: 0
+      #设为false，关闭自我保护
       enableSelfPreservation: false

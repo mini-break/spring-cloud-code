@@ -10,6 +10,7 @@ import reactor.core.publisher.Mono;
 
 /**
  * 统计某个或者某种路由的的处理时长
+ *
  * @author xujin
  */
 public class CustomGatewayFilter implements GatewayFilter, Ordered {
@@ -23,7 +24,7 @@ public class CustomGatewayFilter implements GatewayFilter, Ordered {
         return chain.filter(exchange).then(
                 Mono.fromRunnable(() -> {
                     Long startTime = exchange.getAttribute(COUNT_Start_TIME);
-                    Long endTime=(System.currentTimeMillis() - startTime);
+                    Long endTime = (System.currentTimeMillis() - startTime);
                     if (startTime != null) {
                         log.info(exchange.getRequest().getURI().getRawPath() + ": " + endTime + "ms");
                     }

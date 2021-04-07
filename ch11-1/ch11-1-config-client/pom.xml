@@ -13,7 +13,7 @@
     <artifactId>ch11-1-client-config</artifactId>
 
     <dependencies>
-
+        <!--用来向服务拉取配置所需依赖-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-config-client</artifactId>

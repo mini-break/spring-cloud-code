@@ -9,6 +9,9 @@ import com.netflix.hystrix.exception.HystrixBadRequestException;
 import feign.Response;
 import feign.Util;
 
+/**
+ * 很多时候调用接口会抛出400-500之间的错误，此时可以ErrorDecoder进行封装
+ */
 @Component
 public class FeignErrorDecoder implements feign.codec.ErrorDecoder{
 

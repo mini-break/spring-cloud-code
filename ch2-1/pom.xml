@@ -30,6 +30,7 @@
         <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
     </properties>
 
+    <!--dependencyManagement只是声明依赖，并不实现引入，因此子项目需要显示声明需要的依赖-->
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -42,6 +43,7 @@
         </dependencies>
     </dependencyManagement>
 
+    <!--  即使子项目中不写该依赖，子项目仍然会从父项目中继承该依赖  -->
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>

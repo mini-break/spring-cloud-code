@@ -15,6 +15,9 @@ import java.util.Map;
 import static org.springframework.cloud.netflix.zuul.filters.support.FilterConstants.PRE_DECORATION_FILTER_ORDER;
 import static org.springframework.cloud.netflix.zuul.filters.support.FilterConstants.PRE_TYPE;
 
+/**
+ * 修改请求体
+ */
 @Configuration
 public class ModifyRequestEntityFilter extends ZuulFilter {
 

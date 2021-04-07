@@ -14,7 +14,10 @@ public class RibbonLoadbalancerApplication {
     public static void main(String[] args) {
         SpringApplication.run(RibbonLoadbalancerApplication.class, args);
     }
-    
+
+    /**
+     * 声明该RestTemplate用于负载均衡
+     */
     @Bean
     @LoadBalanced
     public RestTemplate restTemplate() {

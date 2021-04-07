@@ -1,5 +1,9 @@
 server:
+<<<<<<< HEAD
   port: 8083
+=======
+  port: 8082
+>>>>>>> 93490155c4b9b8723a72cb498c7327f2b6ce7f07
 
 spring:
   application:

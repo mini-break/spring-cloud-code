@@ -37,6 +37,7 @@
 
 	
 	<dependencies>
+        <!--	因为hystrix的指标是需要端口支撑的，所以需要增加actuator依赖	-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>

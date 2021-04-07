@@ -6,7 +6,12 @@ spring:
       FAIL_ON_EMPTY_BEANS: false
 eureka:
   server:
+    # 禁用Eureka的ReadOnlyMap缓存
+    # eureka server对rest api提供了多级缓存，第一层是readOnlyCacheMap，然后是readWriteCacheMap，
+    # 最后如果readWriteCacheMap读取不到，然后就从registry进行读取。
+    # 其中readOnlyCacheMap会定时从readWriteCacheMap更新数据，而readWriteCacheMap有自己的过期时间，过期后自动从loader加载新数据
     use-read-only-response-cache: false
+    #注册信息缓存有效时长（s），默认180秒
     response-cache-auto-expiration-in-seconds: 10
 management:
   endpoints:

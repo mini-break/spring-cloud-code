@@ -14,6 +14,7 @@ public class CacheContextInterceptor implements HandlerInterceptor {
 	
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse respone, Object arg2) throws Exception {
+		// 初始化请求上下文
 		context = HystrixRequestContext.initializeContext();
 		return true;
 	}

@@ -18,6 +18,7 @@ public class AuthFilter implements GlobalFilter {
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
+<<<<<<< HEAD
     	Route gatewayUrl = exchange.getRequiredAttribute(ServerWebExchangeUtils.GATEWAY_ROUTE_ATTR);
     	URI uri = gatewayUrl.getUri();
     	ServerHttpRequest request = (ServerHttpRequest)exchange.getRequest();
@@ -34,5 +35,23 @@ public class AuthFilter implements GlobalFilter {
     	}
     	ServerHttpRequest buildReuqest =  mutate.build();
          return chain.filter(exchange.mutate().request(buildReuqest).build());
+=======
+        Route gatewayUrl = exchange.getRequiredAttribute(ServerWebExchangeUtils.GATEWAY_ROUTE_ATTR);
+        URI uri = gatewayUrl.getUri();
+        ServerHttpRequest request = (ServerHttpRequest) exchange.getRequest();
+        HttpHeaders header = request.getHeaders();
+        String token = header.getFirst(JwtUtil.HEADER_AUTH);
+        Map<String, String> userMap = JwtUtil.validateToken(token);
+        ServerHttpRequest.Builder mutate = request.mutate();
+        if (userMap.get("user").equals("admin") || userMap.get("user").equals("spring") || userMap.get("user").equals("cloud")) {
+            mutate.header("x-user-id", userMap.get("id"));
+            mutate.header("x-user-name", userMap.get("user"));
+            mutate.header("x-user-serviceName", uri.getHost());
+        } else {
+            throw new PermissionException("user not exist, please check");
+        }
+        ServerHttpRequest buildReuqest = mutate.build();
+        return chain.filter(exchange.mutate().request(buildReuqest).build());
+>>>>>>> 93490155c4b9b8723a72cb498c7327f2b6ce7f07
     }
 }

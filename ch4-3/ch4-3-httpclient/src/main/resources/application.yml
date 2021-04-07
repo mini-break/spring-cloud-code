@@ -5,5 +5,6 @@ spring:
     name: ch4-3-httpclient
 
 feign:
+  # 加载http client替换默认的client
   httpclient:
       enabled: true
