@@ -1,11 +1,12 @@
 package cn.springcloud.book.gateway.filter;
 
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+import org.springframework.util.StringUtils;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
-import org.springframework.util.StringUtils;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
 
 public class JwtUtil {
 	    public static final String SECRET = "qazwsx123444$#%#()*&& asdaswwi1235 ?;!@#kmmmpom in***xx**&";
@@ -17,8 +18,8 @@ public class JwtUtil {
 	        map.put("id", new Random().nextInt());
 	        map.put("user", user);
 	        String jwt = Jwts.builder()
-    			  .setSubject("user info").setClaims(map)
-    			  .signWith(SignatureAlgorithm.HS512, SECRET)
+    			  .setSubject("user info").setClaims(map)//
+    			  .signWith(SignatureAlgorithm.HS512, SECRET) // 签名,用HS512加密
     			  .compact();
 	        String finalJwt = TOKEN_PREFIX + " " +jwt;
 	        return finalJwt;

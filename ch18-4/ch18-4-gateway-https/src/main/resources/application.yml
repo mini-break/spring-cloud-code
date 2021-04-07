@@ -7,8 +7,8 @@ spring:
     gateway:
       discovery:
         locator:
-           enabled: true
-           lowerCaseServiceId: true
+           enabled: true # 设为true便开启通过服务中心，自动根据 serviceId 创建路由的功能
+           lowerCaseServiceId: true #小写服务名
 
 server:
   ssl:

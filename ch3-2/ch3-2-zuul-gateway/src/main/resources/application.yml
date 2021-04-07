@@ -5,4 +5,4 @@ management:
   endpoints:
     web:
       exposure:
-        include: '*'
+        include: '*' # 暴露所有端点,默认只有info,health

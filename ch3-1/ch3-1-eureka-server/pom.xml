@@ -37,6 +37,7 @@
 
     <build>
         <plugins>
+            <!-- 通过spring-boot-plugin方式启动 -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>

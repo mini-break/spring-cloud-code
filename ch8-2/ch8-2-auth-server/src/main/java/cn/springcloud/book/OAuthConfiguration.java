@@ -12,6 +12,9 @@ import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 
+/**
+ * 认证授权服务适配器
+ */
 @Configuration
 @EnableAuthorizationServer
 public class OAuthConfiguration extends AuthorizationServerConfigurerAdapter {
@@ -23,8 +26,8 @@ public class OAuthConfiguration extends AuthorizationServerConfigurerAdapter {
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients
         .inMemory()
-        .withClient("zuul_server")
-        .secret("secret")
+        .withClient("zuul_server") // 客户端ID
+        .secret("secret") // 客户端密钥
         .scopes("WRIGTH", "read").autoApprove(true)
         .authorities("WRIGTH_READ", "WRIGTH_WRITE")
         .authorizedGrantTypes("implicit", "refresh_token", "password", "authorization_code");
@@ -38,6 +41,7 @@ public class OAuthConfiguration extends AuthorizationServerConfigurerAdapter {
         .authenticationManager(authenticationManager);
     }
 
+    // 指定tokenStore为JWT
     @Bean
     public TokenStore jwtTokenStore() {
         return new JwtTokenStore(jwtTokenConverter());

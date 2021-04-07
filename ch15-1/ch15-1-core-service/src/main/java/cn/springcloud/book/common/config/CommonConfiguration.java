@@ -1,20 +1,19 @@
 package cn.springcloud.book.common.config;
 
+import cn.springcloud.book.common.intercepter.RestTemplateUserContextInterceptor;
+import cn.springcloud.book.common.intercepter.UserContextInterceptor;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
-
-import cn.springcloud.book.common.intercepter.RestTemplateUserContextInterceptor;
-import cn.springcloud.book.common.intercepter.UserContextInterceptor;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
 
 @Configuration
 @EnableWebMvc
-public class CommonConfiguration extends WebMvcConfigurerAdapter{
+public class CommonConfiguration extends WebMvcConfigurationSupport {
 	
 	/**
 	 * 请求拦截器
